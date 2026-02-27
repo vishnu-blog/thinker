@@ -1,15 +1,15 @@
 title: Vishnu's Blog
-description: Automated news & insights from Kerala/India
-baseurl: "/thinker"          # MUST match your repo name/path
+description: Automated posts on news, health, tech & Kerala/India insights
+baseurl: "/thinker"   # MUST match your repo name (the /thinker part in URL)
 url: "https://vishnu-blog.github.io"
 
-# Enable posts collection from /posts folder
+# Important: Enable posts from /posts folder
 collections:
   posts:
     output: true
     permalink: /posts/:name/   # Clean URL: /posts/slug/ (no .md)
 
-# Defaults for posts
+# Defaults for all posts
 defaults:
   - scope:
       path: ""
@@ -17,5 +17,6 @@ defaults:
     values:
       layout: post
 
-# Optional: theme or plugins if you want later
-# theme: minima
+# Optional: Show future posts if testing
+future: true
+show_drafts: false
