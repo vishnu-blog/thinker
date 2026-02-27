@@ -1,5 +1,5 @@
 ---
-layout: default   # This tells Jekyll to use a layout (create _layouts/default.html if missing)
+layout: default
 title: Home
 ---
 
@@ -15,6 +15,8 @@ Automated posts on latest news, health, tech, lifestyle & Kerala/India insights.
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <small> — {{ post.date | date: "%b %d, %Y" }}</small>
     </li>
+  {% empty %}
+    <li>No posts yet — new ones added automatically via Telegram bot!</li>
   {% endfor %}
 </ul>
 
