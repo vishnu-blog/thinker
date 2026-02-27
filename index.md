@@ -1,5 +1,5 @@
 ---
-layout: default   # Use a simple default layout or create _layouts/default.html later
+layout: default   # This tells Jekyll to use a layout (create _layouts/default.html if missing)
 title: Home
 ---
 
@@ -10,12 +10,12 @@ Automated posts on latest news, health, tech, lifestyle & Kerala/India insights.
 ## Latest Posts
 
 <ul>
-  {% for post in site.posts limit:10 reversed %}
+  {% for post in site.posts reversed %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <small> — {{ post.date | date: "%b %d, %Y" }}</small>
     </li>
   {% endfor %}
 </ul>
 
-New posts added automatically via Telegram bot. Check back soon!
+<p>New posts added automatically via Telegram bot. Check back soon!</p>
