@@ -1,29 +1,30 @@
 <!DOCTYPE html>
+html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vishnu's Blog – News & Insights from Kerala/India</title>
+  <title>{title}</title>
+  <meta name="description" content="{meta_desc}">
+  <meta name="keywords" content="{keywords}">
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-    header { text-align: center; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 15px 0; }
-    a { text-decoration: none; color: #0066cc; }
-    footer { text-align: center; margin-top: 40px; color: #777; }
+    body {{ font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }}
+    h1, h2 {{ color: #333; }}
+    footer {{ margin-top: 40px; text-align: center; color: #777; }}
   </style>
 </head>
 <body>
   <header>
-    <h1>Vishnu's Blog</h1>
-    <p>Automated posts on latest news, health, tech & more</p>
+    <h1>{title}</h1>
+    <p>{datetime.now().strftime("%Y-%m-%d")} • Auto-published</p>
+    <a href="/">← Back to Home</a>
   </header>
   <main>
-    <h2>Latest Posts</h2>
-    <ul id="posts-list">
-      <!-- New posts will appear here automatically -->
-    </ul>
+    {full_post.replace('\n', '<br>')}  <!-- Simple conversion; improve later with markdown parser if needed -->
   </main>
-  <footer>© 2026 Vishnu – Powered by Telegram Bot</footer>
+  <footer>© 2026 Vishnu's Blog</footer>
 </body>
 </html>
+"""
+
+encoded_content = base64.b64encode(html_content.encode('utf-8')).decode('utf-8')
