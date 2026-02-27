@@ -3,18 +3,8 @@ description: Automated posts on news, health, tech & Kerala/India insights
 baseurl: "/thinker"
 url: "https://vishnu-blog.github.io"
 
-# Default posts folder (no need for custom collection if using _posts)
-# permalink: /:categories/:title/   # optional for nicer URLs
+# Jekyll defaults handle _posts automatically
+permalink: /:title/   # Clean URLs without date or .md
 
-# If you keep custom 'posts' folder, use this instead:
-# collections:
-#   posts:
-#     output: true
-#     permalink: /posts/:name/
-
-# defaults:
-#   - scope:
-#       path: ""
-#       type: posts
-#     values:
-#       layout: post
+# Force Jekyll to process (optional but helps)
+future: true
