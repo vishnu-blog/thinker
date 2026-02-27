@@ -1,22 +1,20 @@
 title: Vishnu's Blog
 description: Automated posts on news, health, tech & Kerala/India insights
-baseurl: "/thinker"   # MUST match your repo name (the /thinker part in URL)
+baseurl: "/thinker"
 url: "https://vishnu-blog.github.io"
 
-# Important: Enable posts from /posts folder
-collections:
-  posts:
-    output: true
-    permalink: /posts/:name/   # Clean URL: /posts/slug/ (no .md)
+# Default posts folder (no need for custom collection if using _posts)
+# permalink: /:categories/:title/   # optional for nicer URLs
 
-# Defaults for all posts
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
+# If you keep custom 'posts' folder, use this instead:
+# collections:
+#   posts:
+#     output: true
+#     permalink: /posts/:name/
 
-# Optional: Show future posts if testing
-future: true
-show_drafts: false
+# defaults:
+#   - scope:
+#       path: ""
+#       type: posts
+#     values:
+#       layout: post
